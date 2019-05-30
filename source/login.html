@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login Raiffeisen Plan </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="container">
+            <form class="login-form">
+                <span class="form-title">
+                    LOGIN
+                </span>
+                <input class="login-form__field" type="text" name="email" placeholder="Email">
+                <input class="login-form__field" type="password" name="pass" placeholder="Password">
+                <button type="submit" class="login-form__submit">LOGIN</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="js/lib/r92.js"></script>
+<script src="js/lib/wave.js"></script>
+<script>
+    VANTA.WAVES({
+        el: ".login-page",
+        shininess: 100,
+        zoom: 0.6,
+        waveHeight: 39
+    })
+</script>
+</html>

@@ -1,0 +1,180 @@
+@font-face
+{
+    font-family: 'Ipr';
+    font-weight: 400;
+    font-style: normal;
+
+    font-display: swap;
+    src: url('../../fonts/ipr.woff2') format('woff2'), url('../../fonts/ipr.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-style: italic;
+
+    font-display: swap;
+    src: url('../../fonts/opensans300italic.woff2') format('woff2'), url('../../fonts/opensans300italic.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-style: italic;
+
+    font-display: swap;
+    src: url('../../fonts/opensans400italic.woff2') format('woff2'), url('../../fonts/opensans400italic.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-style: italic;
+
+    font-display: swap;
+    src: url('../../fonts/opensans700italic.woff2') format('woff2'), url('../../fonts/opensans700italic.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-style: normal;
+
+    font-display: swap;
+    src: url('../../fonts/opensans300.woff2') format('woff2'), url('../../fonts/opensans300.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-style: normal;
+
+    font-display: swap;
+    src: url('../../fonts/opensans400.woff2') format('woff2'), url('../../fonts/opensans400.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-style: normal;
+
+    font-display: swap;
+    src: url('../../fonts/opensans700.woff2') format('woff2'), url('../../fonts/opensans700.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'PT Serif Caption';
+    font-weight: 400;
+    font-style: italic;
+
+    font-display: swap;
+    src: url('../../fonts/ptserifcaption400italic.woff2') format('woff2'), url('../../fonts/ptserifcaption400italic.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'PT Serif Caption';
+    font-weight: 400;
+    font-style: normal;
+
+    font-display: swap;
+    src: url('../../fonts/ptserifcaption400.woff2') format('woff2'), url('../../fonts/ptserifcaption400.woff') format('woff');
+}
+
+body
+{
+    overflow: hidden; 
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.login-page
+{
+    position: relative;
+
+    display: flex;
+
+    min-height: 100%; 
+    padding: 50px;
+
+    text-align: center;
+
+    color: red;
+
+    justify-content: center;
+}
+
+.container
+{
+    z-index: 100;
+
+    width: 600px;
+    height: 800px;
+    margin-top: 20px; 
+
+    border-radius: 40px;
+    background-color: white;
+}
+
+.form-title
+{
+    font-family: 'Ipr', monospace;
+    font-size: 60px;
+    font-weight: 800;
+
+    display: block;
+
+    margin-top: 60px;
+    margin-bottom: 100px; 
+
+    color: #333;
+}
+
+.login-form
+{
+    font-family: monospace; 
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+.login-form__field
+{
+    font-size: 26px;
+
+    width: 450px;
+    height: 70px;
+    margin-bottom: 60px;
+    padding: 10px;
+
+    border: none;
+    border-radius: 12px;
+    outline: none; 
+    background: #e6e6e6;
+}
+.login-form__submit
+{
+    font-family: monospace;
+    font-size: 24px;
+    font-weight: 800;
+
+    width: 450px;
+    height: 90px;
+    margin-top: 70px;
+
+    color: white; 
+    border-radius: 12px;
+    outline: none;
+    background: #1b92f1;
+}

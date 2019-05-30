@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table
+        {
+            width: 70%;
+            font: 17px Calibri;
+        }
+        table, th, td
+        {
+            border: solid 1px #DDD;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+    <body onload="createTable()">
+        <p>
+            <input type="button" id="addRow" value="Add New Row" onclick="addRow()" />
+        </p>
+
+        <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
+        <div id="cont"></div>
+
+        <p><input type="button" id="bt" value="Sumbit Data" onclick="sumbit()" /></p>
+    </body>
+    <script src="js/create-plan/create-plan.js"></script>
+</html>
