@@ -1,0 +1,9 @@
+__pycache__/
+/.idea/
+/.venv/
+/.vscode/
+/credentials/
+/logs/
+/node_modules/
+/app.db
+/package-lock.json
