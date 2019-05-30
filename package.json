@@ -1,0 +1,33 @@
+{
+  "name": "ipr-ui_v.1.0",
+  "version": "1.0.0",
+  "description": "frontend for IPR project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exeption-executors/IPR-frontend.git"
+  },
+  "keywords": [
+    "ipr"
+  ],
+  "author": "jerryngton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exeption-executors/IPR-frontend/issues"
+  },
+  "homepage": "https://github.com/exeption-executors/IPR-frontend#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "plumber": "^0.4.8"
+  }
+}
