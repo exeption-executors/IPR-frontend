@@ -2,13 +2,15 @@
 let arrHead = [];
 arrHead = ['', 'Emp. Name', 'Designation', 'Age'];      // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
 
+
+
 // FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
 // ADD THE TABLE TO YOUR WEB PAGE.
-function createTable() {
-    let empTable = document.createElement('table');
-    empTable.setAttribute('id', 'empTable');            // SET THE TABLE ID.
+const createTable = () => {
+    let iprTable = document.createElement('table');
+    iprTable.setAttribute('id', 'iprTable');            // SET THE TABLE ID.
 
-    let tr = empTable.insertRow(-1);
+    let tr = iprTable.insertRow(-1);
 
     for (let h = 0; h < arrHead.length; h++) {
         let th = document.createElement('th');          // TABLE HEADER.
@@ -17,56 +19,52 @@ function createTable() {
     }
 
     let div = document.getElementById('cont');
-    div.appendChild(empTable);    // ADD THE TABLE TO YOUR WEB PAGE.
-}
+    div.appendChild(iprTable);    // ADD THE TABLE TO YOUR WEB PAGE.
+};
 
 // ADD A NEW ROW TO THE TABLE.s
-function addRow() {
-    let empTab = document.getElementById('empTable');
+const addRow = () => {
+    let empTab = document.getElementById('iprTable');
 
-    let rowCnt = empTab.rows.length;        // GET TABLE ROW COUNT.
-    let tr = empTab.insertRow(rowCnt);      // TABLE ROW.
-    tr = empTab.insertRow(rowCnt);
+    let rowTemplate = document.getElementById('plan-task');
 
-    for (let c = 0; c < arrHead.length; c++) {
-        let td = document.createElement('td');          // TABLE DEFINITION.
-        td = tr.insertCell(c);
+    let cloneRow = document.importNode(rowTemplate.content, true);
+    empTab.appendChild(cloneRow);
+};
 
-        if (c === 0) {           // FIRST COLUMN.
-                                 // ADD A BUTTON.
-            let button = document.createElement('input');
+const addAim = () => {
 
-            // SET INPUT ATTRIBUTE.
-            button.setAttribute('type', 'button');
-            button.setAttribute('value', 'Remove');
+    let aimTemplate = document.getElementById('aim');
 
-            // ADD THE BUTTON's 'onclick' EVENT.
-            button.setAttribute('onclick', 'removeRow(this)');
+    let cloneAim = document.importNode(aimTemplate.content, true);
 
-            td.appendChild(button);
-        }
-        else {
-            // CREATE AND ADD TEXTBOX IN EACH CELL.
-            let ele = document.createElement('input');
-            ele.setAttribute('type', 'text');
-            ele.setAttribute('value', '');
 
-            td.appendChild(ele);
-        }
-    }
-}
 
+    let addAim = document.querySelector('.addAim');
+    let deleteAim = cloneAim.querySelector('.deleteAim');
+
+    addAim.addEventListener('click', (e) => {
+        let aimList = e.target.parentNode.querySelector('.aims');
+        console.log(aimList);
+        aimList.appendChild(cloneAim);
+    });
+
+    deleteAim.addEventListener('click', (e) => {
+        let aimList = document.querySelector('.aims');
+        aimList.removeChild(e.target.parentNode);
+    });
+};
 
 
 // DELETE TABLE ROW.
-function removeRow(oButton) {
-    let empTab = document.getElementById('empTable');
+const removeRow = (oButton) => {
+    let empTab = document.getElementById('iprTable');
     empTab.deleteRow(oButton.parentNode.parentNode.rowIndex);       // BUTTON -> TD -> TR.
-}
+};
 
 // EXTRACT AND SUBMIT TABLE DATA.
-function sumbit() {
-    let myTab = document.getElementById('empTable');
+const sumbit = () => {
+    let myTab = document.getElementById('iprTable');
     let values = [];
 
     // LOOP THROUGH EACH ROW OF THE TABLE.
@@ -80,4 +78,8 @@ function sumbit() {
         }
     }
     console.log(values);
-}
+};
+
+
+
+

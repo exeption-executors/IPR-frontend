@@ -18,6 +18,7 @@
         }
     </style>
 
+    <script src="js/create-plan/create-plan.js"></script>
 </head>
     <body onload="createTable()">
         <p>
@@ -29,5 +30,42 @@
 
         <p><input type="button" id="bt" value="Sumbit Data" onclick="sumbit()" /></p>
     </body>
-    <script src="js/create-plan/create-plan.js"></script>
+
+    <template id="plan-task">
+        <tr>
+            <td>
+                <button onclick="removeRow(this)">Remove</button>
+            </td>
+            <td>
+                <label>
+                    <select name="priority">
+                        <option value="high">Высокий</option>
+                        <option value="middle">Средний</option>
+                        <option value="low">Низкий</option>
+                        <option value="without-time">Бессрочный</option>
+                    </select>
+                </label>
+            </td>
+            <td>
+                <textarea placeholder="Опишите цель">
+                </textarea>
+            </td>
+            <td class="aims-column">
+                <button class="addAim" onclick="addAim()">+</button>
+                <ul class="aims"></ul>
+            </td>
+        </tr>
+    </template>
+
+    <template id="aim">
+            <li style="display: flex; flex-direction: column">
+                <button class="deleteAim">-</button>
+                <label>
+                    <input type="text">
+                </label>
+            </li>
+    </template>
+
 </html>
+
+
