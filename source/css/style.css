@@ -393,9 +393,7 @@
 
 .login
 {
-    overflow: hidden; 
-
-    height: 100vh;
+    height: 100vh; 
     margin: 0;
     padding: 0;
 }
@@ -488,7 +486,9 @@
     flex-direction: column;
 
     width: 100%;
+    min-width: 1000px; 
     height: 100%;
+    padding-left: 140px;
 
     justify-content: center;
     align-items: center;
@@ -510,6 +510,8 @@ th
 
 .create-plan
 {
+    overflow: scroll; 
+
     border-radius: 10px;
     background: #f8f9f9;
 }
@@ -566,11 +568,6 @@ th
 
     justify-content: center;
     align-items: center;
-}
-
-.create-plan
-{
-    width: 100%;
 }
 
 .addAim,
