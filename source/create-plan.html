@@ -3,40 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <style>
-        table
-        {
-            width: 70%;
-            font: 17px Calibri;
-        }
-        table, th, td
-        {
-            border: solid 1px #DDD;
-            border-collapse: collapse;
-            padding: 2px 3px;
-            text-align: center;
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <script src="js/create-plan/create-plan.js"></script>
 </head>
-    <body onload="createTable()">
-        <p>
-            <input type="button" id="addRow" value="Add New Row" onclick="addRow()" />
-        </p>
+    <body>
+        <div class="plan-layout">
 
-        <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
-        <div id="cont"></div>
-
-        <p><input type="button" id="bt" value="Sumbit Data" onclick="sumbit()" /></p>
+            <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
+            <div class="plan-content" id="cont">
+                <p class="add-task">
+                    <button class="add-task__button" id="addRow" value="Add New Row" onclick="addRow()">Добавить задачу для плана</button>
+                </p>
+            </div>
+            <p><button class="submit-plan" type="button" id="bt"  onclick="sumbit()">Создать план</button></p>
+        </div>
     </body>
 
+    <script>
+        createTable();
+    </script>
+
     <template id="plan-task">
-        <tr>
-            <td>
-                <button onclick="removeRow(this)">Remove</button>
+        <tr class="task">
+            <td class="remove-task task__remove">
+                <button  class="remove-task__button" onclick="removeRow(this)">Удалить задачу</button>
             </td>
-            <td>
+            <td class="task__chooser">
                 <label>
                     <select name="priority">
                         <option value="high">Высокий</option>
@@ -46,26 +40,43 @@
                     </select>
                 </label>
             </td>
-            <td>
+            <td class="task__description">
                 <textarea placeholder="Опишите цель">
                 </textarea>
             </td>
             <td class="aims-column">
-                <button class="addAim" onclick="addAim()">+</button>
+                <button class="addAim" onclick="addAim(this)">+</button>
                 <ul class="aims"></ul>
+            </td>
+            <td class="task_date-picker">
+                <label>
+                    <input class="date-picker"/>
+                </label>
+            </td>
+            <td class="task__add-member">
+                <button class="addMember" onclick="addMember(this)">+</button>
+                <ul class="members"></ul>
             </td>
         </tr>
     </template>
 
     <template id="aim">
-            <li style="display: flex; flex-direction: column">
+            <li class="aim-item">
                 <button class="deleteAim">-</button>
                 <label>
-                    <input type="text">
+                    <input class="aim-type" type="text">
                 </label>
             </li>
     </template>
 
+    <template id="member">
+        <li class="member-item">
+            <button class="deleteMember">-</button>
+            <label>
+                <input class="member-type" type="text">
+            </label>
+        </li>
+    </template>
 </html>
 
 
