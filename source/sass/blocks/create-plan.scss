@@ -5,6 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 140px;
+  min-width: 1000px;
 }
 
 .create-plan, td, th {
@@ -19,6 +21,7 @@
 .create-plan {
   border-radius: 10px;
   background: #F8F9F9;
+  overflow: scroll;
 }
 
 .submit-plan {
@@ -60,10 +63,6 @@ th {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-}
-
-.create-plan {
-  width: 100%;
 }
 
 .addAim, .addMember {
