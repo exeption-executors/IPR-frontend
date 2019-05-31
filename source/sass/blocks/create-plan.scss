@@ -1,0 +1,129 @@
+.plan-layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-plan, td, th {
+  font-size: 20px;
+  font-family: "Ipr", sans-serif;
+
+  border: solid 1px #DDD;
+  padding: 2px 3px;
+  text-align: center;
+}
+
+.create-plan {
+  border-radius: 10px;
+  background: #F8F9F9;
+}
+
+.submit-plan {
+  width: 120px;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: "Ipr", sans-serif;
+  outline: none;
+  background: #027BFF;
+  color: white;
+
+  &:hover {
+    background: #0c63c1;
+  }
+}
+
+td {
+  padding: 10px;
+}
+
+th {
+  padding: 30px;
+}
+
+.aims, .members {
+  padding: 0;
+}
+
+.aim-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.member-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-plan {
+  width: 100%;
+}
+
+.addAim, .addMember {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.deleteAim, .deleteMember {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+
+.plan-content {
+  position: relative;
+}
+
+.add-task {
+  position: absolute;
+  transform: translateX(-110%);
+  bottom: -50px;
+
+  &__button {
+    width: 130px;
+    height: 70px;
+    font-size: 18px;
+    font-family: "Ipr", sans-serif;
+    border-radius: 10px;
+    background: #4676d6;
+    color: white;
+    outline: none;
+
+    &:hover {
+      background: #1557da;
+    }
+  }
+}
+
+.aim-type, .member-type, .date-picker {
+  height: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.remove-task {
+  &__button {
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background: #646cc7;
+    outline: none;
+
+    &:hover {
+      background: #ff0000;
+    }
+  }
+}
+
+
