@@ -1,84 +1,89 @@
-// ARRAY FOR HEADER.
 let arrHead = [];
-arrHead = ['', 'Emp. Name', 'Designation', 'Age'];      // SIMPLY ADD OR REMOVE VALUES IN THE ARRAY FOR TABLE HEADERS.
+arrHead = ['', 'Приоритет', 'Цель', 'Критерии достижения цели', 'Cрок достижения', 'Команда поддержки'];
 
-
-
-// FIRST CREATE A TABLE STRUCTURE BY ADDING A FEW HEADERS AND
-// ADD THE TABLE TO YOUR WEB PAGE.
 const createTable = () => {
     let iprTable = document.createElement('table');
-    iprTable.setAttribute('id', 'iprTable');            // SET THE TABLE ID.
-
     let tr = iprTable.insertRow(-1);
+    let div = document.getElementById('cont');
+
+    iprTable.setAttribute('id', 'iprTable');
+    iprTable.classList.add('create-plan');
+
 
     for (let h = 0; h < arrHead.length; h++) {
-        let th = document.createElement('th');          // TABLE HEADER.
+        let th = document.createElement('th');
         th.innerHTML = arrHead[h];
         tr.appendChild(th);
     }
 
-    let div = document.getElementById('cont');
-    div.appendChild(iprTable);    // ADD THE TABLE TO YOUR WEB PAGE.
+    div.appendChild(iprTable);
 };
 
-// ADD A NEW ROW TO THE TABLE.s
 const addRow = () => {
     let empTab = document.getElementById('iprTable');
 
     let rowTemplate = document.getElementById('plan-task');
 
+
     let cloneRow = document.importNode(rowTemplate.content, true);
+
+    let picker = new Pikaday({ field: cloneRow.querySelector('.date-picker') });
+
     empTab.appendChild(cloneRow);
 };
 
-const addAim = () => {
-
+const addAim = (addAim) => {
     let aimTemplate = document.getElementById('aim');
-
     let cloneAim = document.importNode(aimTemplate.content, true);
-
-
-
-    let addAim = document.querySelector('.addAim');
     let deleteAim = cloneAim.querySelector('.deleteAim');
-
-    addAim.addEventListener('click', (e) => {
-        let aimList = e.target.parentNode.querySelector('.aims');
-        console.log(aimList);
-        aimList.appendChild(cloneAim);
-    });
+    let aimList = addAim.parentNode.querySelector('.aims');
 
     deleteAim.addEventListener('click', (e) => {
-        let aimList = document.querySelector('.aims');
         aimList.removeChild(e.target.parentNode);
     });
+
+    aimList.appendChild(cloneAim);
 };
 
 
-// DELETE TABLE ROW.
-const removeRow = (oButton) => {
+const addMember = (addMember) => {
+    let memberTemplate = document.getElementById('member');
+    let cloneMember = document.importNode(memberTemplate.content, true);
+    let deleteMember = cloneMember.querySelector('.deleteMember');
+    let membersList = addMember.parentNode.querySelector('.members');
+
+    deleteMember.addEventListener('click', (e) => {
+        membersList.removeChild(e.target.parentNode);
+    });
+
+    membersList.appendChild(cloneMember);
+};
+
+
+const removeRow = (removeRowButton) => {
     let empTab = document.getElementById('iprTable');
-    empTab.deleteRow(oButton.parentNode.parentNode.rowIndex);       // BUTTON -> TD -> TR.
+    empTab.deleteRow(removeRowButton.parentNode.parentNode.rowIndex);
 };
 
-// EXTRACT AND SUBMIT TABLE DATA.
-const sumbit = () => {
-    let myTab = document.getElementById('iprTable');
-    let values = [];
 
-    // LOOP THROUGH EACH ROW OF THE TABLE.
-    for (row = 1; row < myTab.rows.length - 1; row++) {
-        for (c = 0; c < myTab.rows[row].cells.length; c++) {   // EACH CELL IN A ROW.
 
-            let element = myTab.rows.item(row).cells[c];
-            if (element.childNodes[0].getAttribute('type') === 'text') {
-                values.push("'" + element.childNodes[0].value + "'");
-            }
-        }
-    }
-    console.log(values);
-};
+
+//TODO: write script whcih will be get all fields combine them and send to server in json
+// const sumbit = () => {
+//     let myTab = document.getElementById('iprTable');
+//     let values = [];
+//
+//     for (row = 1; row < myTab.rows.length - 1; row++) {
+//         for (c = 0; c < myTab.rows[row].cells.length; c++) {
+//
+//             let element = myTab.rows.item(row).cells[c];
+//             if (element.childNodes[0].getAttribute('type') === 'text') {
+//                 values.push("'" + element.childNodes[0].value + "'");
+//             }
+//         }
+//     }
+//     console.log(values);
+// };
 
 
 
