@@ -1,7 +1,7 @@
 .reg-page {
   overflow: hidden;
-  background-image: linear-gradient(rgba(249, 231, 231, .45), rgba(168, 153, 169, 0.45)), url(../img/register-background.jpeg);
-
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(168, 153, 169, .45)), url(../img/register-background.jpeg);
+  background-repeat: no-repeat;
 }
 
 .reg {
@@ -15,7 +15,7 @@
   &__form {
     font-size: 24px;
     font-family: "Ipr", monospace;
-    color: #fffb00;
+    color: white;
     min-width: 1000px;
     display: flex;
     justify-content: space-between;
@@ -65,16 +65,20 @@
   }
 
   .create-button {
-    margin-top: 50px;
     display: flex;
-    justify-content: center;
     width: 100%;
-    height: 50px;
+    height: 70px;
+    margin-top: 50px;
+    justify-content: center;
 
     &__submit {
       font-size: 18px;
       border-radius: 10px;
       border: 1px solid #bba2f7;
+
+      &:hover {
+        background-color: #e5f5e1;
+      }
     }
   }
 }
