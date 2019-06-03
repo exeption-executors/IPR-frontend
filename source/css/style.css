@@ -519,9 +519,7 @@ html
     display: flex;
     flex-direction: column;
 
-    width: 100%;
     min-width: 1000px; 
-    height: 100%;
     padding-left: 140px;
 
     justify-content: center;
