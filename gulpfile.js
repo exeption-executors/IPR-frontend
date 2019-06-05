@@ -17,7 +17,6 @@ server.init({
     ghostMode: false
 });
 
-
 gulp.task("style", function() {
     gulp.src("source/sass/style.scss")
         .pipe(plumber())
@@ -29,7 +28,6 @@ gulp.task("style", function() {
         .pipe(gulp.dest("source/css"))
         .pipe(server.stream());
 });
-
 
 gulp.task("serve", ["style"], function() {
     gulp.watch("source/sass/**/*.scss", ["style"]);
