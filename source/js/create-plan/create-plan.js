@@ -21,12 +21,8 @@ const createTable = () => {
 
 const addRow = () => {
     let empTab = document.getElementById('iprTable');
-
     let rowTemplate = document.getElementById('plan-task');
-
-
     let cloneRow = document.importNode(rowTemplate.content, true);
-
     let picker = new Pikaday({ field: cloneRow.querySelector('.date-picker') });
 
     empTab.appendChild(cloneRow);

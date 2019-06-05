@@ -2,7 +2,6 @@ let getClientsButton = document.querySelector('.clients-getter__button');
 let outField = document.querySelector('.clients-getter__out');
 
 getClientsButton.addEventListener('click', (e) => {
-    e.preventDefault();
     fetch('http://localhost:8080/clients/list', {
         method: 'GET',
         mode: 'cors',

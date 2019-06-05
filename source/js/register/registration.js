@@ -1,7 +1,6 @@
 let createPlan = document.querySelector('.create-button__submit');
 
 createPlan.addEventListener('click', (e) => {
-    e.preventDefault();
     let name = document.querySelector('.type-field--name');
     let surname = document.querySelector('.type-field--surname');
     let email = document.querySelector('.type-field--email');
@@ -20,11 +19,10 @@ createPlan.addEventListener('click', (e) => {
             email: email.value
         })
     })
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((e) => {
-            console.log('bad request:\n' + e);
-        })
-
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((e) => {
+        console.log('bad request:\n' + e);
+    })
 });
