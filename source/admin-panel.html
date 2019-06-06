@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table class="clients-table">
+        <th></th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Почта</th>
+
+    </table>
+</body>
+<script src="js/lib/handlebars.min.js"></script>
+<script id="client-row" type="text/x-handlebars-template">
+    <tr class="task">
+        <td class="">
+            <button  class="" onclick="">Удалить пользователя</button>
+        </td>
+        <td class="">
+            <p>{{name}}</p>
+        </td>
+        <td class="">
+            <p>{{surname}}</p>
+        </td>
+        <td class="">
+            <p>{{email}}</p>
+        </td>
+    </tr>
+</script>
+
+<script src="js/get-all/get-all.js"></script>
+
+</html>
