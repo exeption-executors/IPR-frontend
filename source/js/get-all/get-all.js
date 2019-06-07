@@ -24,14 +24,44 @@ fetch('http://localhost:8080/clients/list', {
 .then((clients) => {
     let buffer = '';
     clients.forEach((client) => {
-        let clientContextInfo = {name: client.name, surname: client.surname, email: client.surname};
+        let clientContextInfo = {name: client.name, surname: client.surname, email: client.email};
         let clientTemplate = template(clientContextInfo);
         clientTable.insertAdjacentHTML('beforeend', clientTemplate);
+    });
+
+    let deleteButtons = document.querySelectorAll('.delete-client');
+
+    deleteButtons.forEach((deleteButton) => {
+        deleteButton.addEventListener('click', (e) => {
+            let email = e.currentTarget.parentNode.parentNode.querySelector('.client-email').textContent.trim();
+
+            fetch('http://localhost:8080/clients', {
+                method: 'DELETE',
+                mode: 'cors',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify( {
+                    email: email
+                })
+            })
+                .then((response) => {
+                    console.log('ура')
+                })
+                .catch(() => {
+                    console.log('lol');
+                })
+        })
     });
 
 })
 .catch((e) => {
     console.log('bad request:\n' + e);
 });
+
+
+
 
 
