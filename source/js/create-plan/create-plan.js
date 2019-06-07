@@ -23,7 +23,18 @@ const addRow = () => {
     let empTab = document.getElementById('iprTable');
     let rowTemplate = document.getElementById('plan-task');
     let cloneRow = document.importNode(rowTemplate.content, true);
-    let picker = new Pikaday({ field: cloneRow.querySelector('.date-picker') });
+    let picker = new Pikaday({
+            field: cloneRow.querySelector('.date-picker'),
+            format: 'DD/MM/YYYY',
+            toString: (date, format) => {
+                const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+                const month = date.getMonth() < 10 ? `0${date.getMonth()}` : date.getMonth();
+                const  year = date.getFullYear();
+
+                return `${day}/${month}/${year}`;
+            }
+
+        });
 
     empTab.appendChild(cloneRow);
 };
