@@ -58,8 +58,53 @@ const addMember = (addMember) => {
 
 const removeRow = (removeRowButton) => {
     let empTab = document.getElementById('iprTable');
+
     empTab.deleteRow(removeRowButton.parentNode.parentNode.rowIndex);
 };
+
+
+
+
+createTable();
+const submitPlan = document.querySelector('.submit-plan');
+submitPlan.addEventListener('click', (evt) => {
+    const planTasks = document.querySelectorAll('.task');
+    console.log(planTasks);
+    let createPlanObject = {
+        planDateStart: null,
+        planDateEnd: null,
+        planTasksEntities: []
+    };
+
+    if(planTasks.length !== 0) {
+        planTasks.forEach((planTask) => {
+            const tasks = planTask.querySelectorAll('.aims-column .aim-type');
+
+
+            let planTaskEntity = {};
+            const priority = planTask.querySelector('.task__chooser select').value;
+            const description = planTask.querySelector('.task__description textarea').value.trim();
+            const tasksEntityList = [];
+            const planDateEnd = planTask.querySelector('.date-picker').value;
+
+            if (tasks.length !== 0) {
+                tasks.forEach((task) => {
+                    tasksEntityList.push(task.value);
+                })
+            }
+
+
+            planTaskEntity.priority = priority;
+            planTaskEntity.description = description;
+            planTaskEntity.planTasksEntities = tasksEntityList;
+            planTaskEntity.planDateEnd = planDateEnd;
+            createPlanObject.planTasksEntities.push(planTaskEntity);
+        })
+    }
+    console.log(createPlanObject);
+});
+
+
 
 
 

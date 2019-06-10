@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-    <script src="js/create-plan/create-plan.js"></script>
 </head>
     <body class="plan-page">
         <div class="plan-layout">
@@ -18,13 +17,12 @@
                     <button class="add-task__button" id="addRow" value="Add New Row" onclick="addRow()">Добавить задачу для плана</button>
                 </p>
             </div>
-            <p><button class="submit-plan" type="button" id="bt"  onclick="sumbit()">Создать план</button></p>
+            <p><button class="submit-plan" type="button">Создать план</button></p>
         </div>
     </body>
 
-    <script>
-        createTable();
-    </script>
+<script src="js/create-plan/create-plan.js"></script>
+
 
     <template id="plan-task">
         <tr class="task">
